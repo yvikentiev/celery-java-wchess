@@ -42,6 +42,7 @@ public class RabbitBackendFactory implements BackendFactory {
         ConnectionFactory factory = new ConnectionFactory();
         try {
             factory.setUri(correctSchemeUri);
+            factory.useSslProtocol();
         } catch (NoSuchAlgorithmException | KeyManagementException | URISyntaxException e) {
             throw new IOException(e);
         }
